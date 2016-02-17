@@ -17,4 +17,15 @@ Devise.setup do |config|
   config.omniauth :facebook, ENV['CLIQUE_FACEBOOK_KEY'], ENV['CLIQUE_FACEBOOK_SECRET'], \
   scope: 'email, user_birthday, user_location', info_fields: 'email, first_name, last_name',
   :image_size => 'large'
+
+
+  config.secret_key = '4a978b9436fc6f4ac7bc0969083d1265d69db598e6a8c276921b5be4f618675d6d8
+284a9efa078642b983af01ad993a61eafb421a5574e847dac3ad3726d1eac'
+
+
+
+
+
+
+  
 end
