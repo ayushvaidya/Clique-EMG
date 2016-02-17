@@ -1,0 +1,46 @@
+<!-- Content Filters -->
+<div class="stats1">
+<%= link_to "All", user_all_path(user), :method => :get, :remote => true %>
+</div>
+<div class="stats2">
+<%= link_to "Posts", user_posts_path(user), :method => :get, :remote => true %>
+</div>
+<div class="stats2">
+<%= link_to "Tracks", user_songs_path(user), :method => :get, :remote => true %>
+</div>
+<%# button_to "Reposts", user_reposts_path(user), :method => :get, :remote => true %>
+<!-- Own profile -->
+<% if @user == current_user %>
+  <% if @user.clique %>
+  <div class="stats2">
+    <%= link_to "Clique", user_clique_path(user), :method => :get, :remote => true %>
+    </div>
+  <% end %>
+  <div class="stats2">
+  <%= link_to "Followers", user_followers_path(user), :method => :get, :remote => true %>
+  </div>
+
+  <div class="stats2">
+  <%= link_to "Following", user_following_path(user), :method => :get, :remote => true %>
+  </div>
+  
+<% elsif current_user %>
+<!-- Others profile -->
+  <!-- Follow -->
+  <% if is_following @user %>
+    <%= button_to "Unfollow", user_unfollow_path(user), :remote => true, :class => "btn-hollow btn"  %>
+  <% else %>
+    <%= button_to "Follow", user_follow_path(user), :remote => true, :class => "btn-hollow btn"  %>
+  <% end %>
+  <!-- Clique-->
+  <% if @user.clique %>
+    <% if current_user.cliques.include? user.clique %>
+
+      <%= button_to "Clique", user_clique_path(user), :method => :get, :remote => true, :class => "button btn btn-info btn-lg btn-primary btn"  %>
+      <%= button_to "Leave Clique", cliq_leave_path(user.clique), :remote => true, :class => "button btn btn-info btn-lg btn-primary btn"  %>
+      
+    <% else %>
+      <%= button_to "Join Clique", cliq_join_path(user.clique), :remote => true, :class => "button btn btn-info btn-lg btn-primary btn"  %>
+    <% end %>
+  <% end %>
+<% end %>

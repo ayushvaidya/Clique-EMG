@@ -1,0 +1,32 @@
+
+
+<div class="page-Bottom2">
+	<div class="container2">
+		  <h1>Settings</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		  
+		<!-- TODO: Make tabs so that it will change the content each time one is pressed -->
+		<div class="col-md-3" style="overflow: auto;">
+		  <%= button_to "Payment Settings", payment_settings_path, :remote => true, :method => :get %>
+		  <% if !current_user.uid %>
+		    <%= button_to "Change Password", change_password_path, :remote => true, :method => :get %>
+		  <% end %>
+		</div>
+		<div class="col-md-9" id="content">
+		  <%= render :partial => "settings/payment_settings" %>
+		</div>
+	</div>
+</div>

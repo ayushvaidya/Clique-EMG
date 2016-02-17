@@ -1,0 +1,3 @@
+$("#flash-container").html('<%= escape_javascript(render :partial => "shared/flash_box") %>');
+$("#buttons").html('<%= j render :partial => "/users/partials/buttons", :locals => { :user => @user } %>');
+<% flash.discard %>

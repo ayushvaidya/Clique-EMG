@@ -1,0 +1,9 @@
+
+<% if followers %>
+  <% if followers.count == 0 %>
+    You have no followers
+  <% end %>
+  <% followers.each do |f| %>
+    <%= link_to f.follower.name, f.follower %><br>
+  <% end %>
+<% end %>

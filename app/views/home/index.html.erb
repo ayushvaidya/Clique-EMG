@@ -1,0 +1,52 @@
+<div class="page-Bottom2">
+	<div class="container2">
+		<div class="rightCol-Index">
+		  <%= render "right_col" %>
+		  <%= render "right_col" %>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  <div class="leftCol">
+	  	<div class="newsfeed-title">
+				<div class="newsfeed-title1">
+					<%= link_to "All Stream", tracks_path, :method => :get, :remote => true %>
+				</div>
+
+
+				<div class="newsfeed-title2">
+					<%= link_to "Tracks", tracks_path, :method => :get, :remote => true %>
+				</div>
+
+				<% if current_user %>
+					<div class="newsfeed-title2">
+					  <%= link_to "Posts", posts_path, :method => :get, :remote => true %>
+					</div>
+					<div class="newsfeed-title2">
+					  <%= link_to "Cliques", cliques_path, :method => :get, :remote => true %>
+					</div>
+				<% end %>
+			</div>
+		<div class="newsfeed-subtitle">
+			See the latest posts from people you follow
+		</div>
+
+
+			<div id="content">
+			  <%= render :partial => "tracks", :locals => { tracks: @tracks } %>
+			</div>
+		</div>
+	</div>
+</div>

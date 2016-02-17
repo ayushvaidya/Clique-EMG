@@ -1,0 +1,49 @@
+<div class="page-Bottom2">
+  <div class="container2">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2>Edit Profile</h2>
+          </div>
+          <div class="panel-body">
+            <%= form_for current_user, :authenticity_token => true, :multipart => true  do |form| %>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %><br>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %><br>
+    <%= form.label :username %>
+    <%= form.text_field :username %><br>
+    <%= form.label :profile_picture %>
+    <%= form.file_field :profile_picture %><br>
+    <%= form.label :cover_picture %>
+    <%= form.file_field :cover_picture %><br>
+    <%= form.label :bio %><br>
+    <%= form.text_area :bio, placeholder: "Enter your bio here", :rows => '10', :cols => '75' %><br>
+    <%= form.submit "Update Profile" %>
+<% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

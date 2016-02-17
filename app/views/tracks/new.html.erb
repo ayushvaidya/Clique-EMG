@@ -1,0 +1,77 @@
+<div class="page-Bottom2">
+  <div class="container2">
+  <h1>My Tracks</h1>
+<%= form_for Track.new, :html => { multipart: true, class: "dropzone"} do |f|  %>
+  <div class="fallback">
+    <%= f.file_field :song %><br>
+    <!-- <input type="hidden" name="track[name]" value="bob" />
+    <input type="hidden" name="track[desc]" value="bob" />
+    <input type="hidden" name="track[public]" value="true" />
+    <input type="hidden" name="track[downloadable]" value="false" />
+    <input type="file" name="track[pic]" value="bob" /> -->
+    <%= f.submit "Upload my Song" %>
+  </div>
+<% end %>
+<script>
+function readURL(input, id) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+              console.log($(input).closest('.image_upload_preview'));
+                $("#"+id + ' .image_upload_preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+$(document).on('ready pjax:success', function() {
+	// disable auto discover
+
+  Dropzone.autoDiscover = false;
+  	var dropzone = new Dropzone (".dropzone", {
+  		maxFilesize: 256, // Set the maximum file size to 256 MB
+  		paramName: "track[song]", // Rails expects the file upload to be something like model[field_name]
+  		addRemoveLinks: true, // Don't show remove links on dropzone itself.
+      autoProcessQueue: false
+  	});
+
+  	dropzone.on("addedfile", function(file) {
+  		//this.removeFile(file)
+  		//$.getScript("/tracks")
+      var id = new Date().getMilliseconds();
+      file.myid = id;
+      //alert(file.myid);
+      $("#upload").append("<div id='"+id+"'class='editUpload'><h4>'" + file.name + "'</h4><img width=180 height=180 class=image_upload_preview src='' /><table><tr><td>Song Name:<td><input name=name><tr><td>Image:<td><input class=edituploadimg type=file name=pic accept=image/*><tr><td>Description:<td><textarea></textarea><tr><td><% if current_user.clique %>Clique Only<% else %>Private<% end %>:<td><input type=checkbox name=public><tr><td>Downloadable:<td><input type=checkbox name=downloadable><tr><td colspan=2><button>Upload</button></table></div>");
+      $("#"+id+" button").click(function(){
+        if(true){
+          dropzone.processFile(file);
+        }
+      });
+      $("#" + id + " .edituploadimg").change(function () {
+          //alert(file.myid);
+          readURL(this, file.myid);
+      });
+  	});
+    dropzone.on('sending', function(file, xhr, formData){
+        //alert($("#"+file.myid + " input[name='name']").val());
+        formData.append('track[name]', $("#"+file.myid + " input[name='name']").val());
+        formData.append('track[pic]', $("#"+file.myid + " input[name='pic']")[0].files[0]);
+        formData.append('track[desc]', $("#"+file.myid + " textarea").val());
+        formData.append('track[clique_only]', $("#"+file.myid + " input[name='public']").is(':checked'));
+        formData.append('track[downloadable]', $("#"+file.myid + " input[name='downloadable']").is(':checked'));
+    });
+    dropzone.on('success', function(file, xhr, formData){
+      $("#"+file.myid).remove();
+      dropzone.removeFile(file);
+    });
+    dropzone.on('error', function(file, xhr, formData){
+      //alert("Your upload was unsuccessfull. Please make sure you inputted all information correctly.");
+    });
+});
+</script>
+<div id="upload">
+  <h2>UPLOAD<h3>
+</div>
+</div>
+</div>

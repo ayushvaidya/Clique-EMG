@@ -1,0 +1,11 @@
+
+<div class="leftCol">
+    <% if posts.count == 0 %>
+      <h3>You have no posts to show!<br>
+        Discover new Artists to follow at the <%= link_to "Explore Page", explore_path %></h3>
+    <% else %>
+      <% posts.each do |p| %>
+          <%= render :partial => '/posts/post', :locals => { :post => p } %>
+      <% end %>
+    <% end %>
+</div>

@@ -1,0 +1,11 @@
+
+<% if content.count == 0 %>
+  Nothing to show
+<% end %>
+<% content.each do |c| %>
+  <% if c.is_a? Post %>
+    <%= render :partial => '/posts/post', :locals => { :post => c } %>
+  <% else %>
+    <%= render :partial => '/tracks/track', :locals => { :track => c } %>
+  <% end %>
+<% end %>

@@ -1,0 +1,26 @@
+<%= form_for post, :remote => true do |form| %>
+
+
+  <%= form.text_area :content, :class => 'post-Input', :placeholder => "What is on your mind?" %>
+
+
+  <!-- Clique Only button-->
+  <% if current_user.clique %>
+
+
+    <%= form.submit "Post", :class => 'post-Btn' %>
+<div class="floatRight">
+      <%= form.label :clique_only do %>
+      
+        <%= form.check_box :clique_only, :class => 'checkbox'  %>
+        Clique Only
+      <% end %>
+    </div>
+
+
+      
+  <% else %>
+    <%= form.submit "Post", :class => 'post-Btn' %>
+  <% end %>
+  
+<% end %>

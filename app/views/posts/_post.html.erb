@@ -1,0 +1,44 @@
+
+
+
+<div class="textpost-Box">
+	<div class="text-Top">
+		<div class="text-userPic">
+			<img src="<%= post.poster.profile_picture_url %>">
+		</div>
+		<div class="text-profileName">
+			<%= link_to post.poster.name, post.poster %>
+		</div>
+		<div class="text-Date">
+			<%= time_ago_in_words post.created_at %>
+		</div>
+	</div>
+	<div class="text-Middle">
+		<div class="text-text">
+			<%= post.content %>
+		</div>	
+	</div>
+	<div class="text-Bottom">
+		<div class="player1-right-btn2">
+
+<% if post.poster == current_user %>
+<div class="player1-btn2">
+				<%= button_to "Delete", post_delete_path(post), :remote => true %>
+			<% end %>
+		</div>
+
+        <div class="player1-btn">
+          <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+        </div>
+        <div class="player1-btn">
+          <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+        </div>
+        <div class="player1-btn">
+          <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+        </div>
+        <div class="player1-btn">
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+        </div>
+			
+		</div>
+	</div>

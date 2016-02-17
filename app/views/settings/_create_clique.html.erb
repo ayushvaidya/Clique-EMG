@@ -1,0 +1,12 @@
+<h1>Create your Clique</h1>
+<%= form_for @clique do |f| %>
+  <%= f.label :name, "Clique Name (Optional) " %>
+  <%= f.text_field :name %><br>
+  <%= f.label :price, "Monthly Subscription Price " %>
+  $<%= f.number_field :price, :step => 0.01 %><br>
+  <%= f.label :description %><br>
+  <%= f.text_area :description, :cols => '50', :rows => '5' %><br>
+  <%= f.label :thank_you_message, "Thank You Message (Optional)" %><br>
+  <%= f.text_area :thank_you_message, :cols => '50', :rows => '5' %><br>
+  <%= f.submit "Create Clique" %>
+<% end %>

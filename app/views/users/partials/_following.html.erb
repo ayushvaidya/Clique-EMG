@@ -1,0 +1,8 @@
+<% if following %>
+  <% if following.count == 0 %>
+    You are not following anyone
+  <% end %>
+  <% following.each do |f| %>
+    <%= link_to f.following.name, f.following %><br>
+  <% end %>
+<% end %>
