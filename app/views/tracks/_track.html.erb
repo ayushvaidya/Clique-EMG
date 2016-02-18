@@ -4,8 +4,8 @@
       <div class="player1-background">
     	 <%= image_tag track.pic.url %>
       </div>
-    <div class="player1-Picture">
-    	<%= image_tag track.pic.url %>
+    <!--<div class="player1-Picture">
+      <%= image_tag track.pic.url %>
     </div>
     <div class="player1-Stats">
       <div class="player1-Stats1">
@@ -17,7 +17,7 @@
       <div class="player1-Stats1">
         <span class="glyphicon glyphicon-play" aria-hidden="true"></span> 120K
       </div>
-    </div>
+    </div>-->
     <div class="player1-Genre">
       <%= time_ago_in_words track.created_at %>
     </div>
@@ -26,7 +26,11 @@
     <div class="player1-Section2-Middle">
       <div class="player1-Name">
         <div class="player1-play">
-          <%= link_to 'Play', track.song.url, class:"playa"%>
+          <%= link_to track.song.url, class:"playa" do %>
+            <div class="play-Btn">
+              <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+            </div>
+          <% end %>
         </div>
       </div>
       <div class="player1-left-btn">
