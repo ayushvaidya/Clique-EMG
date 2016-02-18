@@ -1,33 +1,27 @@
 <div class="sm2-bar-ui fixed full-width dark-text flat" id="yoloswa">
   <div class="bd sm2-main-controls">
-    <div class="sm2-inline-texture"></div>
-    <div class="sm2-inline-gradient"></div>
-    <div class="sm2-inline-element sm2-buffer"></div>
+
     <div class="sm2-inline-element sm2-button-element">
       <div class="sm2-button-bd">
         <span class="glyphicon glyphicon-step-backward" ></span>
         <a href="#prev" title="Previous" class="sm2-inline-button previous"></a>
-
-<!-- Anmol's Code with double glyphicon        
-<a href="#prev" title="Previous" class="sm2-inline-button previous glyphicon glyphicon-step-backward"></a>
--->
-
-
-
       </div>
     </div>
+
     <div class="sm2-inline-element sm2-button-element">
       <div class="sm2-button-bd" onclick="$('#playorpause').toggleClass('glyphicon-play').toggleClass('glyphicon-pause');">
         <span id="playorpause" class="glyphicon glyphicon-play" aria-hidden="true"></span>
         <a href="#play" class="sm2-inline-button play-pause">Play / pause</a>
       </div>
     </div>
+
     <div class="sm2-inline-element sm2-button-element">
       <div class="sm2-button-bd">
         <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
         <a href="#next" title="Next" class="sm2-inline-button next">&gt; next</a>
       </div>
     </div>
+
     <div class="sm2-inline-element sm2-inline-status">
       <div class="sm2-progress">
         <div class="sm2-row">
@@ -42,9 +36,8 @@
       </div>
     </div>
 
-      <%
-        @tracks = Track.all;
-      %>
+      <% @tracks = Track.all; %>
+
     <div class="sm2-inline-element sm2-name">
       <div class="sm2-playlist">
         <div class="audioplayer-image">
@@ -88,16 +81,37 @@
 </div>
 -->
 
+
+
+
+
+
   <div class="sm2-inline-element sm2-button-element sm2-favourite">
-    <div class="sm2-button-bd">
+    <div class="sm2-button-bd2">
+      <div class="audioplayer-btn">
+        <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+      </div>
+      <a href="#" class="sm2-inline-button favourite">Volume</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="sm2-inline-element sm2-button-element sm2-favourite">
+    <div class="sm2-button-bd2">
       <div class="audioplayer-btn">
         <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
       </div>
       <a href="#" class="sm2-inline-button favourite">Favourite</a>
     </div>
-</div>
+  </div>
 
-<div class="sm2-inline-element sm2-buffer"></div>
+
+
 </div>
 
 <div class="bd sm2-playlist-drawer sm2-element">

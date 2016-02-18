@@ -1,7 +1,11 @@
 
 <% if songs %>
   <% if songs.count == 0 %>
-  No Tracks to Show
+        <div class="no-post">
+        <div class="no-post-img"></div>
+          <%= @user.first_name %> has not uploaded any tracks</br>
+        <%= link_to "Explore Artists", explore_path, :class => "btn no-post-btn btn-primary secondary-background" %>
+       </div>
   <% end %>
   
   <% songs.each do |t| %>

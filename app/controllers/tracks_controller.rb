@@ -21,7 +21,7 @@ class TracksController < ApplicationController
     if @track
       @track.destroy
     end
-    redirect_to tracks_path
+    redirect_to current_user_path
   end
   # --------------------------------- Other-------------------------------------
   private

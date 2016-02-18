@@ -1,37 +1,25 @@
 <!-- Header -->
 <div class="topBanner">
   <div class="profile-Banner">
-    <div class="banner-Overlay">
-    </div>
+    <div class="banner-Overlay"></div>
     <img src="<%= @user.cover_picture_url %>">
   </div>
-
-    <div class="user-picture">
-      <img src="<%= @user.profile_picture_url %>"  height="150">
-    </div>
-    <div class="profile-pagename">
-      <%= @user.first_name %>
-      <%= @user.last_name %>
-    </div>
-    <div class="profile-Bio">
-<%= @user.bio %>
-
-    </div>
-
-
-
-
-
-
-
-
+  <div class="user-picture">
+    <img src="<%= @user.profile_picture_url %>">
+  </div>
+  <div class="profile-pagename">
+    <%= @user.first_name %>
+    <%= @user.last_name %>
+  </div>
+  <div class="profile-Bio">
+    <%= @user.bio %>
+  </div>
 </div>
 
 
 <!-- Stats Bar + Profile Picture + Artist Names -->
 <div class="statsBar">
   <div class="container2">
-    <!-- Profile Picture -->
 
   <!-- Buttons -->
     <div id="buttons">
@@ -44,28 +32,23 @@
 
 <div class="profile-bottom">
   <div class="container2">
-
-
     <!-- Right Column -->
     <div class="rightCol">
       <%= render :partial => "/users/partials/profile_right", :locals => { user: @user } %>
     </div>
 
-<!-- Left Column  -->  
+    <!-- Left Column  -->  
     <div class="leftCol">
-
     <!-- Post Form if own profile -->
-        <% if @user == current_user %>
-          <div class="post-Box">
-              <%= render :partial => "/users/partials/post_form", :locals => { post: @post } %>
-          </div>
-        <% end %>
-
+      <% if @user == current_user %>
+        <div class="post-Box">
+          <%= render :partial => "/users/partials/post_form", :locals => { post: @post } %>
+        </div>
+      <% end %>
       <!-- Content -->
       <div id="content">
         <%= render :partial => "/users/partials/all", :locals => { content: @content } %>
       </div>
     </div>
-
   </div>
 </div>

@@ -10,12 +10,28 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Home", home_path %></li>
             <li><%= link_to "Explore", explore_path %></li>
-            <li><%= link_to "Upload", new_track_path %></li>
-            <li><%= link_to "Profile", current_user %></li>
+
+
           </ul>
+
+      <div class="logo">
+      </div>
+
+
+
+
+
+
 
           <!-- Account dropdown menu-->
           <ul class="nav navbar-nav navbar-right">
+
+            <li><%= link_to "Upload", new_track_path %></li>
+
+
+              <%= link_to image_tag(@current_user.profile_picture), current_user, :class => 'nav-pic' %>
+
+
             <li class="dropdown">
 
 
@@ -27,7 +43,7 @@
 
 
 
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= @current_user.first_name %> <%= @current_user.last_name %><span class="caret"></span></a>
 
 
               <ul class="dropdown-menu">
@@ -40,7 +56,8 @@
             
 
 
-              </div>  
+              </div> 
+                <li><%= link_to "Profile", current_user %></li> 
                 <li><%= link_to "Edit Profile", edit_profile_path %></li>
                 <li><%= link_to "Settings", settings_path %></li>
                 <li><%= link_to "Clique Settings", clique_settings_path %></li>

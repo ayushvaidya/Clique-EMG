@@ -106,7 +106,7 @@ class UsersController < ApplicationController
 
   def followers
     @user = User.find_by_username(params[:user_id])
-    @followers = @user.follower
+    @followers = @user.followers
     respond_to do |format|
       format.js
     end

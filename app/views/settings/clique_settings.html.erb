@@ -1,7 +1,6 @@
 
 <div class="page-Bottom2">
 	<div class="container2">	
-		<h1>Your Clique</h1>
 		<% if @clique.valid? %>
 		  <div class="col-md-3" style="overflow: auto;">
 		    <%= button_to "Edit Clique", edit_clique_path, :remote => true, :method => :get %>

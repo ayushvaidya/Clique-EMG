@@ -1,7 +1,14 @@
-<div class="buffer">
-  <% if content.count == 0 %>
-    <h3>You have no clique content to show!<br>
-      Discover new Artists and join their Clique at the <%= link_to "Explore Page", explore_path %></h3>
+<% if content.count == 0 %>
+      <div class="no-post">
+        <div class="no-post-img"></div>
+      No clique content to show</br>
+        <%= link_to "Explore Artists", explore_path, :class => "btn no-post-btn btn-primary secondary-background" %>
+       </div>
+
+
+
+
+
   <% else %>
     <% content.each do |c| %>
       <% if c.is_a? Post %>
@@ -11,4 +18,4 @@
       <% end %>
     <% end %>
   <% end %>
-</div>
+
