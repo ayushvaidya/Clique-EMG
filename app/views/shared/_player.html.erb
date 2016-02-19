@@ -82,6 +82,14 @@
 -->
 
 
+  <div class="sm2-inline-element sm2-button-element sm2-favourite">
+    <div class="sm2-button-bd2">
+      <div class="audioplayer-btn">
+        <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+      </div>
+      <a href="#" class="sm2-inline-button favourite">Favourite</a>
+    </div>
+  </div>
 
 
 
@@ -94,6 +102,7 @@
       <a href="#" class="sm2-inline-button favourite">Volume</a>
     </div>
   </div>
+
 
 
 
@@ -126,6 +135,11 @@
       <% @tracks.each do |track| %>
         <li>
           <a href="<%= track.song.url %>">
+
+           <div class="audioplayer-image">
+              <%= image_tag track.pic.url %>     
+            </div>
+
             <div class="audioplayer-info">
               <h4><%= track.owner.name %></h4>
               <h5><%= track.name %></h5>

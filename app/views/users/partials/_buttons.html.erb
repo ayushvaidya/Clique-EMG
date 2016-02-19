@@ -24,6 +24,10 @@
   <%= link_to "Following", user_following_path(user), :method => :get, :remote => true %>
   </div>
   
+  <div class="edit-Profile">
+    <%= button_to "Edit Profile", edit_profile_path, :method => :get, :remote => true, :class => "button btn btn-info btn-lg btn-primary btn"  %>
+  </div>
+
 <% elsif current_user %>
 <!-- Others profile -->
   <!-- Follow -->
@@ -36,7 +40,10 @@
   <% if @user.clique %>
     <% if current_user.cliques.include? user.clique %>
 
-      <%= button_to "Clique", user_clique_path(user), :method => :get, :remote => true, :class => "button btn btn-info btn-lg btn-primary btn"  %>
+  <div class="stats2">
+      <%= link_to "Clique", user_clique_path(user), :method => :get, :remote => true %>
+  </div>
+
       <%= button_to "Leave Clique", cliq_leave_path(user.clique), :remote => true, :class => "button btn btn-info btn-lg btn-primary btn"  %>
       
     <% else %>
