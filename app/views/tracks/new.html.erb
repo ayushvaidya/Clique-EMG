@@ -41,7 +41,7 @@ $(document).on('ready pjax:success', function() {
       var id = new Date().getMilliseconds();
       file.myid = id;
       //alert(file.myid);
-      $("#upload").append("<div id='"+id+"'class='editUpload m-shadow-light m-border-light'><h4>'" + file.name + "'</h4><img width=180 height=180 class=image_upload_preview src='' /><table><tr><td>Song Name:<td><input name=name value= {"+file.name+"}><tr><td>Image:<td><input class=edituploadimg type=file name=pic accept=image/*><tr><td>Description:<td><textarea></textarea><tr><td><% if current_user.clique %>Clique Only<% else %>Private<% end %>:<td><input type=checkbox name=public><tr><td>Downloadable:<td><input type=checkbox name=downloadable><tr><td colspan=2><button>Upload</button></table></div>");
+      $("#upload").append("<div id='"+id+"'class='editUpload m-shadow-light m-border-light'><table class=upload_details><img width=180 height=180 class=image_upload_preview src='' /><tr><td class='textfield__label m-required-label'>Song Name:<td><input class=song_field name=name value= '"+file.name+"'><tr><td>Image:<td><input class=edituploadimg type=file name=pic accept=image/*><tr><td>Description:<td><textarea class=song_field></textarea><tr class='uploadchecks'><td><% if current_user.clique %>Clique Only<% else %>Private<% end %>:<td><input type=checkbox name=public class='uploadcb'><tr class='uploadchecks'><td>Downloadable:<td><input type=checkbox name=downloadable class='uploadcb'></table><div class='upload_bottom'><button>Upload</button></div></div>");
       $("#"+id+" button").click(function(){
         if(true){
           dropzone.processFile(file);
@@ -70,7 +70,6 @@ $(document).on('ready pjax:success', function() {
 });
 </script>
 <div id="upload">
-  <h2>UPLOAD<h3>
 </div>
 </div>
 </div>
