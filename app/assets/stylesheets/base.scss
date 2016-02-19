@@ -1,0 +1,191 @@
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ html,body{
+   margin:0;
+   padding:0;
+   padding-bottom: 10px;
+   height: auto;
+ }
+
+body{
+  font-family: 'Open Sans', sans-serif;  
+}
+
+
+/* Repeated Classes */
+
+$primary-color: #fe4641;
+$border: #e5e5e5;
+
+
+
+
+textarea{
+  min-height: 0px !important; 
+  resize: none;
+      overflow: hidden;
+}
+
+
+a {
+   outline: 0 !important; 
+}
+
+a:visited {
+  color: inherit !important; 
+}
+a { 
+  color: inherit !important; 
+} 
+
+a:hover, a:focus{
+  color: inherit !important; 
+  text-decoration: none !important; 
+}
+
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+.primary-background {
+  background-color: $primary-color !important;
+  color: white !important;
+}
+
+
+.floatright {
+  float:right;
+}
+
+
+.fa-lg {
+  color:#888;
+
+  &:hover{
+    color:#f50;
+  }
+
+}
+
+/* Nav Bar */
+
+.navbar-nav > li > a{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 32px;
+
+}
+
+
+
+
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height:100%;
+}
+
+
+
+body {
+    background-color: white;
+font-family: 'Roboto', sans-serif;
+  color: #555 !important;
+  height:100%;
+}
+
+
+.footer{
+  height: 100px;
+}
+
+.page-Bottom{
+  background: linear-gradient(to bottom, #fff, #F1F5F7);
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 100px;
+}
+
+.page-Bottom2{
+  background: linear-gradient(to bottom, #fff, #F1F5F7);
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 100px;
+  padding-top: 90px;
+  min-height: 700px;
+}
+
+.signin-Bottom{
+  background: linear-gradient(to bottom, #fff, #F1F5F7);
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 100px;
+  padding-top: 90px;
+  min-height:100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.margin-left10{
+  margin-left: 10px;
+}
+
+.alert {
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.m-shadow-light {
+    box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
+}
+.m-border-light {
+    border: 1px solid #f2f2f2;
+}
+
+
+.editUpload{
+  display:block;
+  padding: 14px 25px 0;
+  float: left;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+.editUpload img{
+  width:180px;
+  height:180px;
+  background-color: #ccc;
+  background-image:linear-gradient(135deg,#846170,#70929c);
+  float:left;
+}
+
+.editUpload table{
+  margin-left:20px;
+  float:left;
+}
+
+.audioplayer-info{
+  width:150px !important;
+  text-align: left;
+  margin-top:-1px !important;
+  margin-left: 40px;
+}
+
+.narrow-container{
+  width: 800px;
+  margin: 0 auto ;
+  display: block;
+}

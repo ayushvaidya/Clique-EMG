@@ -30,14 +30,17 @@
 
   .dz-preview {
     position: relative;
-    display: inline-block;
-    width: 120px;
-    margin: 0.5em;
+    display: table;
+    vertical-align: top;
+    margin: 0px;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 
     .dz-progress {
       display: block;
       height: 15px;
-      border: 1px solid #aaa;
+      border: 1px solid #EFEFEF;
       .dz-upload {
         display: block;
         height: 100%;
@@ -66,8 +69,8 @@
       display: none;
       left: 30px;
       top: 30px;
-      width: 54px;
-      height: 58px;
+      width: 50px;
+      height: 50px;
       left: 50%;
       margin-left: -(54px/2);
     }

@@ -1,7 +1,6 @@
 <div class="page-Bottom2">
-  <div class="container2">
-  <h1>My Tracks</h1>
-<%= form_for Track.new, :html => { multipart: true, class: "dropzone"} do |f|  %>
+  <div class="container2 narrow-container">
+<%= form_for Track.new, :html => { multipart: true, class: "dropzone m-shadow-light m-border-light"} do |f|  %>
   <div class="fallback">
     <%= f.file_field :song %><br>
     <!-- <input type="hidden" name="track[name]" value="bob" />
@@ -32,7 +31,7 @@ $(document).on('ready pjax:success', function() {
   	var dropzone = new Dropzone (".dropzone", {
   		maxFilesize: 256, // Set the maximum file size to 256 MB
   		paramName: "track[song]", // Rails expects the file upload to be something like model[field_name]
-  		addRemoveLinks: true, // Don't show remove links on dropzone itself.
+  		addRemoveLinks: false, // Don't show remove links on dropzone itself.
       autoProcessQueue: false
   	});
 
@@ -42,7 +41,7 @@ $(document).on('ready pjax:success', function() {
       var id = new Date().getMilliseconds();
       file.myid = id;
       //alert(file.myid);
-      $("#upload").append("<div id='"+id+"'class='editUpload'><h4>'" + file.name + "'</h4><img width=180 height=180 class=image_upload_preview src='' /><table><tr><td>Song Name:<td><input name=name><tr><td>Image:<td><input class=edituploadimg type=file name=pic accept=image/*><tr><td>Description:<td><textarea></textarea><tr><td><% if current_user.clique %>Clique Only<% else %>Private<% end %>:<td><input type=checkbox name=public><tr><td>Downloadable:<td><input type=checkbox name=downloadable><tr><td colspan=2><button>Upload</button></table></div>");
+      $("#upload").append("<div id='"+id+"'class='editUpload m-shadow-light m-border-light'><h4>'" + file.name + "'</h4><img width=180 height=180 class=image_upload_preview src='' /><table><tr><td>Song Name:<td><input name=name value= {"+file.name+"}><tr><td>Image:<td><input class=edituploadimg type=file name=pic accept=image/*><tr><td>Description:<td><textarea></textarea><tr><td><% if current_user.clique %>Clique Only<% else %>Private<% end %>:<td><input type=checkbox name=public><tr><td>Downloadable:<td><input type=checkbox name=downloadable><tr><td colspan=2><button>Upload</button></table></div>");
       $("#"+id+" button").click(function(){
         if(true){
           dropzone.processFile(file);
