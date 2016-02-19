@@ -1,18 +1,52 @@
-
-<div class="rightCol2">
-  <div class="rightBlock">
-    <div class="rightCol-Filter-Title">
-      <div class="rightCol-Filter-Title-Name">
-        Join <%= user.first_name %>'s Clique
+<div class="rightBlock">
+    <div class="right-Stats">
+      <div class="right-Stat1">
+        <div class="right-Stat-Top">
+          Posts
+        </div>
+        <div class="right-Stat-Bottom">
+       <%= user.posts.count %>     
+        </div>
       </div>
-      <div class="rightCol-Filter-Title-Stat"></div>
+      <div class="right-Stat2">
+        <div class="right-Stat-Top">
+          Tracks
+        </div>
+        <div class="right-Stat-Bottom">
+          <%= user.tracks.count %>
+        </div>
+      </div>
+      <div class="right-Stat3">
+        <div class="right-Stat-Top">
+          Followers
+        </div>
+        <div class="right-Stat-Bottom">
+   
+               <%= user.followers.count %>
+        </div>
+      </div>
     </div>
+  </div>
+
+
+
+<% if user.clique.present? %>
+
+
+  <div class="rightBlock">
+    <div class="rightCol-Clique-Title">
+        Exclusive Clique Perks
+      </div>
     <div class="rightBlock-Body">
        <%= user.clique.description %>        
     </div>
+    <div class="right-Clique-Btn">
+      Join Clique
+    </div>
   </div>
+<% else %>
+<% end %>
 </div>
-
 
 
 

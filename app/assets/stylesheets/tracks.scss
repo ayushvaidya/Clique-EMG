@@ -4,6 +4,13 @@
 $primary-color: #fe4641;
 $border: #e5e5e5;
 
+.rightCol {
+	width: 310px;
+	position: relative;
+	float: left;
+	margin-left: 10px;
+}
+
 
 
 
@@ -916,16 +923,6 @@ a {
 	width: 100%;
 }
 
-
-.rightCol {
-	width: 100%;
-	position: relative;
-}
-
-.leftCol {
-	width:100%;
-	position: relative;
-}
 
 
 
@@ -2218,6 +2215,33 @@ $border: #e5e5e5;
 
 
 
+
+.rightCol-Clique-Title{
+	width: 100%;
+	height: 25px;
+	margin-bottom: 10px;
+	font-weight: 600;
+
+}
+
+
+.right-Clique-Btn{
+	width:100%;
+	height:40px;
+	background-color: #e8ebeb;
+	margin-top: 10px;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 40px;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
 .rightCol-Filter-Profile{
 	width: 100%;
 	height: 40px;
@@ -2325,13 +2349,13 @@ body {
 
 
 .container2 {
-	width: 930px;
+	width: 950px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .container3 {
-	width: 960px;
+	width: 980px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -2355,20 +2379,21 @@ display: inline-block;
 
 
 
-.rightCol2 {
-width: 286px;
+.rightBlock {
+border-radius: 3px;
+position: relative;
+padding-bottom: 15px;
+width: 100%;
 float:right;
 background-color: white;
 border-radius: 3px;
 padding: 20px;
 border: 1px solid #dce0e0;
-}
+margin-bottom: 10px
 
 
-.rightBlock {
-border-radius: 3px;
-position: relative;
-padding-bottom: 15px;
+
+
 }
 
 
@@ -2555,7 +2580,7 @@ img{
 .btn-hollow.btn{
 	height:38px;
 	line-height: 33px;
-	width:138px;
+	width:150px;
 	color: #888;
 	float:right;
 	border: 1px solid;
@@ -2578,7 +2603,7 @@ img{
 .btn-primary.btn{
 	height:38px;
 	line-height: 33px;
-	width:138px;
+	width:150px;
 	color: white !important;
 	float:right;
 	border: 1px solid;

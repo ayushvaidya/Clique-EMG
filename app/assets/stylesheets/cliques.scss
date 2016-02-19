@@ -1,3 +1,37 @@
 // Place all the styles related to the Cliques controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.right-Stats{
+	height: 45px;
+	width: 100%;
+	color: #999;
+	text-align: center;
+}
+
+.right-Stat1{
+	height: 100%;
+	width:86px;
+	border-right: 1px solid #dce0e0;
+	float: left;
+}
+
+.right-Stat2{
+	height: 100%;
+	width:97px;
+	float: left;
+	border-right: 1px solid #dce0e0;
+
+}
+
+
+.right-Stat3{
+	height: 100%;
+	width:81px;
+	float: left;
+
+}
+
+.right-Stat-Bottom{
+	font-size: 24px;
+}

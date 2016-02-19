@@ -19,11 +19,7 @@
 
 <!-- Stats Bar + Profile Picture + Artist Names -->
 <div class="statsBar">
-    <% if @user.clique.present? %>
   <div class="container2">
-<% else %> 
-  <div class="container4">
-    <% end %>
   <!-- Buttons -->
     <div id="buttons">
       <%= render :partial => "/users/partials/buttons", :locals => { user: @user } %>
@@ -34,7 +30,7 @@
 
 
 <div class="profile-bottom">
-  <% if @user.clique.present? %>
+
   <div class="container2">
 
     <!-- Left Column  -->  
@@ -57,24 +53,7 @@
     </div>
   </div>
 
-<% else %> 
-  <div class="container4">
 
-    <!-- Left Column  -->  
-    <div class="leftCol">
-    <!-- Post Form if own profile -->
-      <% if @user == current_user %>
-        <div class="post-Box">
-          <%= render :partial => "/users/partials/post_form", :locals => { post: @post } %>
-        </div>
-      <% end %>
-      <!-- Content -->
-      <div id="content">
-        <%= render :partial => "/users/partials/all", :locals => { content: @content } %>
-      </div>
-    </div>
-
-<% end %>
 
 </div>
 
